@@ -1,0 +1,105 @@
+.carousel-container {
+    height: 400px;
+    background-color: #df7943;
+    border-radius: 20px;
+    margin: 5rem auto;
+    box-shadow: 0 0 8px #0000005d;
+    margin-top: 12rem   ;
+
+}
+
+
+.carousel-images {
+    display: flex;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+    overflow: hidden;
+}
+
+.carousel-images .carousel-img {
+    width: 100%;
+    min-width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }   
+}
+
+.botao-central {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    padding: 1rem 2rem;
+    background-color: var(--cor-secondaria);
+    border-radius: 20px;
+    transition: all 0.1s ease;
+    color: var(--container);
+    text-align: center;
+}
+
+.botao-central:hover {
+    bottom: -10px;
+    background-color: var(--cor-secondaria-2);
+}
+
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-flow: row wrap;
+    margin: 10rem auto;
+    background: var(--container);
+    padding: 1em;
+    border-radius: 20px;
+}
+
+.sobre-container .capa {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 20px 50% 50% 20px;
+}
+
+.sobre-content {
+    max-width: 500px;
+
+    & .titulo {
+        margin-bottom: 1rem;
+    }
+}
+
+
+
+.servicos {
+    margin: 3rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-flow: row wrap;
+    overflow: hidden;
+    padding: 1em;
+    background: var(--container);
+    border-radius: 20px;
+
+}
+
+.square {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: 250px;
+    background-color: #df7943;
+    border-radius: 20px;
+}
+
+@media (min-width:992px) {
+    .servicos {
+        justify-content: space-between;
+    }
+}

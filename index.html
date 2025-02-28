@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa</title>
+    <link rel="stylesheet" href="./css/index.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar container">
+            <img class="logo" src="imgs/leal-logo.png" alt="logo do Leal" />
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+
+            <ul class="nav-links" id="nav-links">
+                <li class="link"><a href="#">Início</a></li>
+                <li class="link"><a href="#1">Sobre</a></li>
+                <li class="link"><a href="#2">Serviços</a></li>
+                <li class="link"><a href="#3">Contato</a></li>
+                <button class="action-button">Faça seu orçamento</button>
+
+            </ul>
+
+        </nav>
+    </header>
+    <main>
+        <div class="carousel-container container" data-aos="fade-down">
+            <div class="carousel-images">
+                <div class="carousel-img">
+                    <img src="imgs/banner-1.png" alt="">
+                </div>
+                <div class="carousel-img">
+                    <img src="imgs/banner-2.png" alt="">
+                </div>
+            </div>
+            <a href="" class="botao-central link">
+                Entre em contato
+            </a>
+        </div>
+        <div id="1" class="sobre-container container">
+            <img src="tela.png" class="capa">
+            <div class="sobre-content">
+                <h2 class="titulo">Um pouco sobre a empresa</h2>
+                <p class="text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium molestias voluptatibus ab
+                    natus!
+                    Dolorem, quis unde quam quas at sint accusantium, possimus facere quaerat voluptates, odit deserunt
+                    perspiciatis culpa nam.
+                </p>
+            </div>
+        </div>
+
+        <div id="2" class="servicos container">
+            <div class="square" data-aos="fade-right"></div>
+            <div class="square" data-aos="fade-left"></div>
+        </div>
+    </main>
+    <footer class="footer">
+
+        <p>Contato: (11) 1234-5678 | Email: contato@empresa.com</p>
+        <p>Endereço: Rua Exemplo, 123 - Cidade, Estado</p>
+
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="navbar.js"></script>
+    <script>
+        AOS.init();
+
+        function flipa() {
+            let card = document.getElementById("card1");
+            card.classList.add("animate__flip");
+            setTimeout(() => {
+                card.classList.remove(animate__flip);
+
+            }, 800);
+        }
+
+    </script>
+
+</body>
+
+</html>

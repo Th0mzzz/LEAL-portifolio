@@ -1,0 +1,118 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--container);
+    color: white;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    color: white;
+    margin: auto;
+}
+
+.nav-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links li a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-primaria);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: var(--cor-primaria);
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+.logo{
+    width: 100%;
+    max-width: clamp(180px, 25vw, 250px);
+}
+
+
+.action-button {
+    margin-left: 1rem;
+    background: #ff6600;
+    color: white;
+    padding: 20px 35px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: -200%;
+        left: 0;
+        background: var(--cor-secondaria-2);
+        transform: translateY(-100%);
+        opacity: 0;
+        z-index: 1000;
+        width: 100%;
+        padding: 1rem;
+        & .link{
+            width: 100%;
+            & a{
+                display: block;
+                width: 100%;
+            }
+        }
+        & .action-button{
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        top: 150% ;
+        left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
