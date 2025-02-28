@@ -1,32 +1,54 @@
 .carousel-container {
     height: 400px;
-    background-color: #df7943;
     border-radius: 20px;
     margin: 5rem auto;
     box-shadow: 0 0 8px #0000005d;
-    margin-top: 12rem   ;
+    margin-top: 12rem;
 
 }
 
+.carousel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-container .arrow-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    translate: 0 -50%;
+    z-index: 1000;
+
+    & .arrow {
+        cursor: pointer;
+        font-size: 35px;
+        color: var(--cor-primaria);
+    }
+}
 
 .carousel-images {
     display: flex;
     height: 100%;
     transition: transform 1s ease-in-out;
     overflow: hidden;
+    width: 200%; 
 }
 
 .carousel-images .carousel-img {
+    flex-shrink: 0;
     width: 100%;
-    min-width: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-    & img {
+    & img{
         width: 100%;
         height: 100%;
         object-fit: cover;
-    }   
+    }
 }
+
 
 .botao-central {
     position: absolute;

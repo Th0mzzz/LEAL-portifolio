@@ -7,7 +7,7 @@
     --ff-title: "Montserrat Alternates", Arial;
     --ff-text: "Raleway", Verdana;
     --ff-link: "Jost", 'Times New Roman', Times, serif;
-    --cor-primaria: #df7943;
+    --cor-primaria: #ff6600;
     --cor-primaria-2: #EB5B00;
     --cor-secondaria: #808080;
     --cor-secondaria-2: #4d4d4d;
@@ -72,4 +72,21 @@ header {
 .text {
     font-size: clamp(14px, 4vw, 16px);
     font-family: var(--ff-text);
+}
+
+.btn-primary {
+    background: var(--cor-primaria);
+    transition: all .3s ease-in-out;
+    border: none;
+    outline: none;
+    padding: .8rem 1.4rem;
+    color: var(--container);
+    font-size: clamp(15px, 5vw, 18px);
+    font-family: var(--ff-link);
+    text-decoration: none;
+    border-radius: 20px;
+    cursor: pointer;
+    &:hover{
+        background: var(--cor-primaria-2);
+    }
 }
