@@ -59,7 +59,7 @@ header {
 .titulo {
     font-size: clamp(28px, 8vw, 32px);
     font-family: var(--ff-title);
-    color: var(--primary);
+    color: var(--cor-primaria);
 }
 
 .link {
@@ -84,9 +84,35 @@ header {
     font-size: clamp(15px, 5vw, 18px);
     font-family: var(--ff-link);
     text-decoration: none;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
         background: var(--cor-primaria-2);
+    }
+}
+
+
+.btn-icon {
+    background: transparent;
+    transition: all .3s ease-in-out;
+    border: none;
+    outline: none;
+    padding: .8rem;
+    color: var(--cor-primaria);
+    font-size: 22px;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+
+    & i {
+        margin: auto;
+    }
+
+    &:hover {
+        background: var(--cor-primaria);
+        color: var(--container);
+        border-radius: 50%;
     }
 }

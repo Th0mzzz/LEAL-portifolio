@@ -19,6 +19,12 @@ header {
     margin: auto;
 }
 
+
+.redes {
+    display: flex;
+    gap: .4rem;
+}
+
 .nav-container {
     flex-grow: 1;
     display: flex;
@@ -64,7 +70,7 @@ header {
     display: none;
 }
 
-.logo{
+.logo {
     width: 100%;
     max-width: clamp(180px, 25vw, 250px);
 }
@@ -92,14 +98,17 @@ header {
         z-index: 1000;
         width: 100%;
         padding: 1rem;
-        & .link{
+
+        & .link {
             width: 100%;
-            & a{
+
+            & a {
                 display: block;
                 width: 100%;
             }
         }
-        & .action-button{
+
+        & .action-button {
             width: 100%;
             margin-left: 0;
         }
@@ -108,7 +117,7 @@ header {
     .nav-links.active {
         transform: translateY(0);
         opacity: 1;
-        top: 150% ;
+        top: 150%;
         left: 0;
     }
 

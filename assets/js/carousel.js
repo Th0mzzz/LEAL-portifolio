@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let interval;
 
     function updateCarousel() {
-        carouselImages.style.transform = `translateX(-${index * (100 / totalImages)}%)`;
+        carouselImages.style.transform = `translateX(-${index * 100}%)`;
     }
 
     function nextSlide() {
