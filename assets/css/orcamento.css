@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import "header.css";
+@import "main.css";
+@import "footer.css";
+
+:root {
+    --ff-title: "Montserrat Alternates", Arial;
+    --ff-text: "Raleway", Verdana;
+    --ff-link: "Jost", 'Times New Roman', Times, serif;
+    --cor-primaria: #ff6600;
+    --cor-primaria-2: #EB5B00;
+    --cor-secondaria: #808080;
+    --cor-secondaria-2: #4d4d4d;
+    --cor-fundo: #F6F0F0;
+    --container: #FFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--cor-fundo);
+}
+
+main,
+footer,
+header {
+    padding: 1em;
+}
+
+.p_titulo{
+    font-size: clamp(30px, 4vw, 16px);
+    font-family: var(--ff-text);
+    color: #EB5B00;
+    display: inline-block;
+    border-bottom: 2px solid #EB5B00;
+    padding-bottom: 2px
+}
+.p_titulo::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #EB5B00;
+    margin-top: 5px;
+}
+
+.orcamento {
+    background-color: #178aa0;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.orcamento:hover {
+    transform: scale(1.1);
+    background-color: #0f6674;
+}
+
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+}
+
+
+.titulo {
+    font-size: clamp(28px, 8vw, 32px);
+    font-family: var(--ff-title);
+    color: var(--cor-primaria);
+}
+
+.link {
+    font-size: clamp(15px, 5vw, 18px);
+    font-family: var(--ff-link);
+    text-decoration: none;
+}
+
+
+.text {
+    font-size: clamp(14px, 4vw, 16px);
+    font-family: var(--ff-text);
+}
+
+.btn-primary {
+    background: var(--cor-primaria);
+    transition: all .3s ease-in-out;
+    border: none;
+    outline: none;
+    padding: .8rem 1.4rem;
+    color: var(--container);
+    font-size: clamp(15px, 5vw, 18px);
+    font-family: var(--ff-link);
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+        background: var(--cor-primaria-2);
+    }
+}
+
+
+.btn-icon {
+    background: transparent;
+    transition: all .3s ease-in-out;
+    border: none;
+    outline: none;
+    padding: .8rem;
+    color: var(--cor-primaria);
+    font-size: 22px;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+
+    & i {
+        margin: auto;
+    }
+
+    &:hover {
+        background: var(--cor-primaria);
+        color: var(--container);
+        border-radius: 50%;
+    }
+}
