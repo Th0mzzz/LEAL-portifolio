@@ -1,6 +1,35 @@
 .footer {
     background: #df7943;
     color: white;
-    text-align: center;
-    padding: 3rem 1rem;
+    text-align: left;
+    padding: 3rem 3rem;
+}
+
+.img_footer{
+    width: 17%;
+    height: 30%;
+}
+
+.icons_footer{
+float: left;
+
+}
+b{
+    font-family: var(--ff-text)
+}
+p{
+    font-family: var(--ff-text)
+}
+.text_footer{
+    padding-left: 26px;
+    margin-top: 4px;
+    font-family: var(--ff-text)
+}
+.img_pag{
+    row-gap: 16px;
+   padding-left: 8px;
+}
+.pagamento{
+    float: right;
+    margin-top: 117.1px;
 }
