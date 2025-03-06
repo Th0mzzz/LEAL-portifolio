@@ -27,11 +27,21 @@ body {
     background: var(--cor-fundo);
 }
 
-main,
+
+::-webkit-scrollbar {
+    width: 8px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: var(--cor-primaria);
+}
+
+/* main,
 footer,
 header {
-    padding: 1em;
-}
+} */
 
 .orcamento {
     background-color: #178aa0;
@@ -52,7 +62,9 @@ header {
 .container {
     position: relative;
     width: 100%;
-    max-width: 1024px;
+    max-width: 1440px;
+    padding: 1em;
+    margin: auto;
 }
 
 
@@ -98,21 +110,34 @@ header {
     transition: all .3s ease-in-out;
     border: none;
     outline: none;
-    padding: .8rem;
     color: var(--cor-primaria);
     font-size: 22px;
     text-decoration: none;
     border-radius: 10px;
     cursor: pointer;
     display: flex;
+    position: relative;
+    padding-bottom: 5px;
+    margin: 0.8rem;
 
     & i {
         margin: auto;
     }
 
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--cor-primaria);
+        transition: width 0.3s ease-in-out;
+    }
+
     &:hover {
-        background: var(--cor-primaria);
-        color: var(--container);
-        border-radius: 50%;
+        &::after {
+            width: 100%;
+        }
     }
 }

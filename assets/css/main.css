@@ -1,7 +1,30 @@
+.banner-inicial{
+    position: relative;
+    margin: 3rem 0;
+    margin-top: 111px;
+    background-image: url("../imgs/banners/banner-3.png");
+    padding: 12rem 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    & .container{
+        margin: auto;
+    }
+    & .cta-container{
+        background: var(--container);
+        width: fit-content;
+        padding: 3rem;
+        border-radius: 20px;
+        max-width: 496px;
+        & .titulo, & .text{
+            margin-bottom: 1rem;
+        }
+    }
+}
+
 .carousel-container {
-    height: 400px;
+    height: 450px;
     margin: 0rem auto;
-    margin-top: 12rem;
     z-index: 100;
 }
 
@@ -57,16 +80,21 @@
     transform: translateX(-50%);
     width: auto;
     padding: 1rem 2rem;
-    background-color: var(--cor-secondaria);
+    background-color: #A0C878;
     border-radius: 20px;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
     color: var(--container);
     text-align: center;
+
+    & i {
+        margin-left: 10px;
+        font-size: 20px;
+    }
 }
 
 .botao-central:hover {
-    bottom: -10px;
-    background-color: var(--cor-secondaria-2);
+
+    background-color: #7e9e5d;
 }
 
 
@@ -81,15 +109,16 @@
 }
 
 .sobre-container .capa {
+    object-fit: cover;
     width: 100%;
-    max-width: 420px;
+    max-height: 320px;
     border-radius: 20px 20px 50% 50%;
 }
 
 .sobre-content {
-    max-width: 500px;
-    padding: 1em;
+    padding: 3em;
     text-align: center;
+    width: 100%;
 
     & .titulo {
         margin-bottom: 1rem;
@@ -106,10 +135,11 @@
 
 }
 
-.servicos section{
+.servicos section {
     width: 100%;
     margin: 1rem 0;
 }
+
 .square {
     position: relative;
     width: 100%;
@@ -117,25 +147,30 @@
     height: 250px;
     background-color: #df7943;
     border-radius: 20px;
-    &.ml-auto{
+
+    &.ml-auto {
         margin-left: auto;
     }
-    &.me-auto{
+
+    &.me-auto {
         margin-right: auto;
     }
 }
 
-@media (min-width:992px) {
+@media (min-width:768px) {
     .servicos {
         justify-content: space-between;
     }
 
     .sobre-container .capa {
         border-radius: 20px 50% 50% 20px;
+        width: 45%;
+        max-height: none;
+
     }
 
     .sobre-content {
         text-align: start;
-
+        max-width: 350px;
     }
 }
