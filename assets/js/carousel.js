@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const carouselImages = document.querySelector(".carousel-images");
     const prevButton = document.querySelector(".arrow-btns .arrow:first-child");
     const nextButton = document.querySelector(".arrow-btns .arrow:last-child");
-    const images = document.querySelectorAll(".carousel-img");
+    const images = document.querySelectorAll(".carousel-item");
     
     if (!carouselImages || !prevButton || !nextButton || images.length === 0) return;
     

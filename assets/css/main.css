@@ -28,7 +28,7 @@
 
 .topicos {
     padding: 4rem 0;
-    
+
     & .topicos-content {
         margin: 3rem 0;
         display: flex;
@@ -45,12 +45,14 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            & h3{
+
+            & h3 {
                 font-family: var(--ff-title);
                 color: var(--cor-primaria);
                 margin-bottom: .4rem;
             }
-            & .icon{
+
+            & .icon {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -61,16 +63,14 @@
                 height: 75px;
                 font-size: 40px;
                 color: var(--container);
-                background:linear-gradient(to bottom, var(--cor-primaria), #c54c01);
+                background: linear-gradient(to bottom, var(--cor-primaria), #c54c01);
             }
         }
     }
 }
 
-
-
 .carousel-container {
-    height: 450px;
+    height: 350px;
     margin: 6rem auto;
     z-index: 100;
 }
@@ -79,8 +79,6 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 0 8px #0000005d;
 }
 
 
@@ -103,19 +101,33 @@
 }
 
 .carousel-images {
+    padding: 1rem;
+    gap: 1rem;
     display: flex;
     height: 100%;
     transition: transform 1s ease-in-out;
 }
 
-.carousel-images .carousel-img {
+.carousel-images .carousel-item {
+
+    padding: 1rem;
+    border-radius: 20px;
     flex-shrink: 0;
     width: 100%;
+    background: var(--container);
+    max-width: 500px;
 
     & img {
-        width: 100%;
-        height: 100%;
+        width: 85px;
+        height: 85px;
         object-fit: cover;
+        border-radius: 50%;
+    }
+
+    & .item-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
     }
 }
 
