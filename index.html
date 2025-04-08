@@ -9,12 +9,16 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="shortcut icon" href="assets/imgs/leal-smLogo.png" type="image/x-icon">
     <title>LEALL-Redes de proteção</title>
+    <style>
+        /* Navigation Buttons */
+        
+    </style>
 </head>
 
 <body>
     <header>
         <nav class="navbar container">
-            <img class="logo" src="./assets/imgs/leal-logo.png" alt="logo doooo Leal" />
+            <img class="logo" src="./assets/imgs/leal-logo.png" alt="logo do Leal" />
             <button class="menu-toggle" id="menu-toggle">☰</button>
 
             <ul class="nav-links" id="nav-links">
@@ -84,15 +88,40 @@
                 </div>
             </div>
         </section>
-        <div id="1" class="servicos container">
-            <section>
-                <div class="square me-auto" data-aos="fade-right"></div>
-            </section>
-            <section>
-
-                <div class="square ml-auto" data-aos="fade-left"></div>
-            </section>
+        <div class="container">
+            <h2 class="titulo-carrosel">Nossos Serviços</h2>
+            <div class="servicos-carrosel" data-aos="fade-up">
+                <div class="carousel-wrapper">
+                    <!-- Carousel Items -->
+                    <div class="carousel-items">
+                        <div class="carousel-item">
+                            <div class="content">
+                                <img src="./assets/imgs/tela.png" alt="Instalação de Redes de Proteção">
+                                <h3>Instalação de Redes de Proteção</h3>
+                                <p>Realizamos a instalação de redes de proteção em janelas, sacadas e varandas.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="content">
+                                <img src="./assets/imgs/tela.png" alt="Manutenção de Redes de Proteção">
+                                <h3>Manutenção de Redes de Proteção</h3>
+                                <p>Serviços de manutenção para garantir a segurança contínua das redes instaladas.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="content">
+                                <img src="./assets/imgs/tela.png" alt="Consultoria">
+                                <h3>Consultoria</h3>
+                                <p>Consultoria especializada para escolher as melhores soluções de proteção.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Navigation Buttons -->
+            <button class="carousel-btn prev-btn"><i class="bi bi-chevron-left"></i></button>
+            <button class="carousel-btn next-btn"><i class="bi bi-chevron-right"></i></button>
         </div>
+    </div>
+</div>
         <div class="container">
             <h2 class="titulo">Avaliações</h2>
             <div class="carousel-container " data-aos="fade-down">
@@ -181,7 +210,7 @@
 
         <div class="sobrenos" data-aos="fade-up">
             <div class="image-sobrenos">
-                <img src="./assets/imgs/tela.png" alt="Equipe de Consultoria">
+                <img src="./assets/imgs/tela.png "  alt="Equipe de Consultoria">
                 <img class="img2" src="./assets/imgs/tela.png" alt="Equipe de Consultoria">
             </div>
             <div class="text-sobrenos">
@@ -234,6 +263,32 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/navbar.js"></script>
     <script src="./assets/js/carousel.js"></script>
+    <script>
+        // JavaScript for Carousel
+        const carouselItems = document.querySelector('.carousel-items');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+    
+        let currentIndex = 0;
+    
+        // Move to the previous slide
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : carouselItems.children.length - 1;
+            updateCarousel();
+        });
+    
+        // Move to the next slide
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex < carouselItems.children.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        });
+    
+        // Update the carousel position
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+        carouselItems.style.transform = `translateX(${offset}%)`;
+    }
+</script>
     <script>
         AOS.init();
 
