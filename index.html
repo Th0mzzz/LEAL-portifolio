@@ -11,7 +11,44 @@
     <title>LEALL-Redes de proteção</title>
     <style>
         /* Navigation Buttons */
-        
+        .image-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .image-wrapper img {
+            width: 100px;
+            height: 300px;
+            display: block;
+            border-radius: 10px; /* Opcional: para bordas arredondadas */
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 85%; /* Centraliza verticalmente */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translate(-50%, -50%); /* Ajusta o centro */
+            text-align: center;
+            color: #fff; /* Cor do texto */
+            
+            padding: 10px 20px;
+           
+    }
+
+        .text-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            font-family: var(--ff-title);
+            color: var(--cor-primaria);
+        }
+
+        .text-overlay p {
+            font-size: 1rem;
+            font-family: var(--ff-text);
+            color: #fff;
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -96,23 +133,29 @@
                     <div class="carousel-items">
                         <div class="carousel-item">
                             <div class="content">
-                                <img src="./assets/imgs/tela.png" alt="Instalação de Redes de Proteção">
+                                <img src="./assets/imgs/trabalho/janela3.jpg" alt="Instalação de Redes de Proteção">
                                 <h3>Instalação de Redes de Proteção</h3>
                                 <p>Realizamos a instalação de redes de proteeção em janelas, sacadas e varandas.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="content">
-                                <img src="./assets/imgs/tela.png" alt="Manutenção de Redes de Proteção">
+                                <img src="./assets/imgs/trabalho/janela2.jpg" alt="Manutenção de Redes de Proteção">
+                                <div class="text-overlay">
                                 <h3>Manutenção de Redes de Proteção</h3>
                                 <p>Serviços de manutenção para garantir a segurança contínua das redes instaladas.</p>
+                            </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="content">
-                                <img src="./assets/imgs/tela.png" alt="Consultoria">
-                                <h3>Consultoria</h3>
-                                <p>Consultoria especializada para escolher as melhores soluções de proteção.</p>
+                                <div class="image-wrapper">
+                                    <img src="./assets/imgs/trabalho/sacada8.jpg" alt="Consultoria">
+                                    <div class="text-overlay">
+                                        <h3>Consultoria</h3>
+                                        <p>Consultoria especializada para escolher as melhores soluções de proteção.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
