@@ -7,27 +7,24 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!carouselImages || !prevButton || !nextButton || images.length === 0) return;
 
     let index = 0;
+    const maxClicks = 1; // Limite de cliques para avançar ou retroceder
     const totalImages = images.length;
 
     function updateCarousel() {
-        // Garante que o índice está dentro dos limites
-        if (index < 0) index = 0;
-        if (index >= totalImages) index = totalImages - 1;
-
         // Atualiza a posição do carousel
         const offset = -index * 100;
         carouselImages.style.transform = `translateX(${offset}%)`;
     }
 
     function nextSlide() {
-        if (index < totalImages - 1) { // Verifica se não está no último slide
+        if (index < maxClicks) { // Permite avançar até o limite de cliques
             index++;
             updateCarousel();
         }
     }
 
     function prevSlide() {
-        if (index > 0) { // Verifica se não está no primeiro slide
+        if (index > 0 && index <= maxClicks) { // Permite retroceder até o limite de cliques
             index--;
             updateCarousel();
         }
@@ -41,10 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     carouselImages.addEventListener("mouseleave", startAutoSlide);
 
     // Auto-slide opcional
-    let autoSlide = setInterval(nextSlide, 5000);
+    
 
-    function startAutoSlide() {
-        clearInterval(autoSlide);
-        autoSlide = setInterval(nextSlide, 5000);
-    }
+    
 });

@@ -99,8 +99,9 @@ body {
     padding-left: 40px;
 }
 
-.text-sobrenos h3 {
-    color: #6c757d;
+.text-sobrenos h2 {
+    color: black;
+    margin-bottom: 3px;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -108,8 +109,9 @@ body {
 
 .text-sobrenos h1 {
     font-size: 32px;
-    margin: 10px 0;
-    color: #212529;
+    margin: 7px 4px;
+    color: #6c757d;
+    text-transform: uppercase;
 }
 
 .text-sobrenos p {
