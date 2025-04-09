@@ -3,48 +3,48 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevButton = document.querySelector(".arrow-btns .arrow:first-child");
     const nextButton = document.querySelector(".arrow-btns .arrow:last-child");
     const images = document.querySelectorAll(".carousel-item");
-    
+
     if (!carouselImages || !prevButton || !nextButton || images.length === 0) return;
-    
+
     let index = 0;
     const totalImages = images.length;
-    let interval;
 
     function updateCarousel() {
-        carouselImages.style.transform = `translateX(-${index * 100}%)`;
+        // Garante que o índice está dentro dos limites
+        if (index < 0) index = 0;
+        if (index >= totalImages) index = totalImages - 1;
+
+        // Atualiza a posição do carousel
+        const offset = -index * 100;
+        carouselImages.style.transform = `translateX(${offset}%)`;
     }
 
     function nextSlide() {
-        index = (index + 1) % totalImages;
-        updateCarousel();
+        if (index < totalImages - 1) { // Verifica se não está no último slide
+            index++;
+            updateCarousel();
+        }
     }
 
     function prevSlide() {
-        index = (index - 1 + totalImages) % totalImages;
-        updateCarousel();
+        if (index > 0) { // Verifica se não está no primeiro slide
+            index--;
+            updateCarousel();
+        }
     }
 
-    function startAutoSlide() {
-        stopAutoSlide();
-        interval = setInterval(nextSlide, 5000);
-    }
+    nextButton.addEventListener("click", nextSlide);
+    prevButton.addEventListener("click", prevSlide);
 
-    function stopAutoSlide() {
-        clearInterval(interval);
-    }
-
-    nextButton.addEventListener("click", () => {
-        nextSlide();
-        startAutoSlide();
-    });
-
-    prevButton.addEventListener("click", () => {
-        prevSlide();
-        startAutoSlide();
-    });
-
-    carouselImages.addEventListener("mouseenter", stopAutoSlide);
+    // Opcional: Pausa o carousel ao passar o mouse
+    carouselImages.addEventListener("mouseenter", () => clearInterval(autoSlide));
     carouselImages.addEventListener("mouseleave", startAutoSlide);
 
-    startAutoSlide();
+    // Auto-slide opcional
+    let autoSlide = setInterval(nextSlide, 5000);
+
+    function startAutoSlide() {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(nextSlide, 5000);
+    }
 });

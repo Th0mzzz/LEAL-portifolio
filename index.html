@@ -18,20 +18,21 @@
         }
 
         .image-wrapper img {
-            width: 100px;
-            height: 300px;
+            width: 100%;
+            height: auto;
             display: block;
             border-radius: 10px; /* Opcional: para bordas arredondadas */
         }
 
         .text-overlay {
             position: absolute;
-            top: 85%; /* Centraliza verticalmente */
+            top: 75%; /* Centraliza verticalmente */
             left: 50%; /* Centraliza horizontalmente */
             transform: translate(-50%, -50%); /* Ajusta o centro */
             text-align: center;
+            background-color: rgba(17, 16, 16, 0.5); /* Fundo semitransparente */
             color: #fff; /* Cor do texto */
-            
+            border-radius: 4px;
             padding: 10px 20px;
            
     }
@@ -95,7 +96,7 @@
             </div>
         </section>
         <section class="topicos container">
-            <div class="topicos-content">
+            <div class="topicos-content" data-aos="fade-up" data-aos-delay="100">
                 <div class="item">
                     <div class="icon">
                         <i class="bi bi-geo-alt"></i>
@@ -105,24 +106,26 @@
                         <p class="text">​Atendemos toda Grande São Paulo, Interior e Litoral</p>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" >
                     <div class="icon">
-                        <i class="bi bi-geo-alt"></i>
+                        <i class="bi bi-clock-history"></i>
                     </div>
                     <div class="content">
-                        <h3>Localização</h3>
-                        <p class="text">​Atendemos toda Grande São Paulo, Interior e Litoral</p>
+                        <h3>Horário</h3>
+                        <p class="text">Segunda a Sábado, das 8h às 18h</p>
                     </div>
                 </div>
-                <div class="item">
+
+                <div class="item" >
                     <div class="icon">
-                        <i class="bi bi-geo-alt"></i>
+                        <i class="bi bi-shield-check"></i>
                     </div>
                     <div class="content">
-                        <h3>Localização</h3>
-                        <p class="text">​Atendemos toda Grande São Paulo, Interior e Litoral</p>
+                        <h3>Garantia</h3>
+                        <p class="text">5 anos de garantia em nossos produtos</p>
                     </div>
                 </div>
+
             </div>
         </section>
         <div class="container">
@@ -133,18 +136,24 @@
                     <div class="carousel-items">
                         <div class="carousel-item">
                             <div class="content">
-                                <img src="./assets/imgs/trabalho/janela3.jpg" alt="Instalação de Redes de Proteção">
-                                <h3>Instalação de Redes de Proteção</h3>
-                                <p>Realizamos a instalação de redes de proteeção em janelas, sacadas e varandas.</p>
+                                <div class="image-wrapper">
+                                    <img src="./assets/imgs/trabalho/janela3.jpg" alt="Instalação de Redes de Proteção">
+                                    <div class="text-overlay">
+                                        <h3>Instalação </h3>
+                                        <p>Realizamos a instalação de redes de proteção em janelas, sacadas e varandas.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="content">
-                                <img src="./assets/imgs/trabalho/janela2.jpg" alt="Manutenção de Redes de Proteção">
-                                <div class="text-overlay">
-                                <h3>Manutenção de Redes de Proteção</h3>
-                                <p>Serviços de manutenção para garantir a segurança contínua das redes instaladas.</p>
-                            </div>
+                                <div class="image-wrapper">
+                                    <img src="./assets/imgs/trabalho/janela2.jpg" alt="Manutenção de Redes de Proteção">
+                                    <div class="text-overlay">
+                                        <h3> Redes de Proteção</h3>
+                                        <p>Serviços de manutenção para garantir a segurança contínua das redes instaladas.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -254,7 +263,7 @@
         <div class="sobrenos" data-aos="fade-up">
             <div class="image-sobrenos">
                 <img src="./assets/imgs/tela.png "  alt="Equipe de Consultoria">
-                <img class="img2" src="./assets/imgs/tela.png" alt="Equipe de Consultoria">
+                <img class="img2" src="./assets/imgs/trabalho/sacada5.jpg" alt="Equipe de Consultoria">
             </div>
             <div class="text-sobrenos">
                 <h3>Sobre Nós</h3>
@@ -302,6 +311,10 @@
 
 
     </footer>
+    <a href="https://wa.me/5511952955379" class="whatsapp-float" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+        <span>Orçamento Grátis</span>
+    </a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/navbar.js"></script>
@@ -316,14 +329,18 @@
     
         // Move to the previous slide
         prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : carouselItems.children.length - 1;
-            updateCarousel();
+            if (currentIndex > 0) { // Verifica se não está no primeiro slide
+                currentIndex--;
+                updateCarousel();
+            }
         });
     
         // Move to the next slide
         nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex < carouselItems.children.length - 1) ? currentIndex + 1 : 0;
-            updateCarousel();
+            if (currentIndex < carouselItems.children.length - 1) { // Verifica se não está no último slide
+                currentIndex++;
+                updateCarousel();
+            }
         });
     
         // Update the carousel position
