@@ -4,116 +4,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empresa</title>
+    <meta name="description" content="Orçamento para instalação de redes de proteção em São Paulo. Preços competitivos e instalação profissional.">
+    <title>Pré-Orçamento | Leal Redes de Proteção</title>
     <link rel="stylesheet" href="./assets/css/orcamento.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --light-color: #f8f9fa;
+            --dark-color: #34495e;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .navbar .logo {
+            height: auto;
+        }
+
+        .redes a {
+            margin-left: 1rem;
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .redes a:hover {
+            color: var(--secondary-color);
+        }
+
+        .p_titulo {
+            text-align: center;
+            font-size: 2.2rem;
+            margin: 2rem 0 1rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 1.5rem;
+            color: var(--dark-color);
+            position: relative;
+            font-size: 1.8rem;
+        }
+
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+            margin: 15px auto;
+        }
+
+        .price-table {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .price-table th,
+        .price-table td {
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .price-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .price-table tr:nth-child(even) {
+            background-color: var(--light-color);
+        }
+
+        .price-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .price-highlight {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .disclaimer {
+            margin: 2rem auto;
+            padding: 1.5rem;
+            max-width: 800px;
+            background-color: var(--light-color);
+            border-left: 4px solid var(--secondary-color);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            width: auto;
+            max-width: 300px;
+            margin: 2rem auto;
+            padding: 1rem 2rem;
+            background-color: var(--success-color);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background-color: #2ecc71;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 300px;
+            text-align: center;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+            display: block;
+        }
+
+        .card-content {
+            padding: 1rem;
+            text-align: left;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            color: var(--dark-color);
+            line-height: 1.6;
+            margin: 0;
+            flex: 1;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-header img {
+            max-width: 180px;
+            height: auto;
+        }
+
+        .footer-contacts {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+
+        .footer-contacts li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-contacts a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-contacts a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <nav class="navbar container">
             <a href="./index.html">
-            <img class="logo" src="./assets/imgs/leal-logo.png" alt="logo do Leal" >
-        </a>
-            <button class="menu-toggle" id="menu-toggle">☰</button>
-
-           
-                <div class="redes">
-                    <a href="https://www.instagram.com/lealrede?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn-icon" target="_blank">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a href="https://wa.me/5511934112405?text=ola!%20quero%20agendar%20uma%20instalação" class="btn-icon" target="_blank">
-                        <i class="bi bi-whatsapp"></i>
-                    </a>
-                </div>
-            </ul>
-
+                <img class="logo" src="./assets/imgs/leal-logo.png" alt="Leal Redes de Proteção - Logo">
+            </a>
+            <div class="redes">
+                <a href="https://www.instagram.com/lealrede" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://wa.me/5511934112405" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+            </div>
         </nav>
     </header>
-    <p class="p_titulo">Tabela de preços</p>
-        <main>
-            <div class="container cards-container">
 
-           
-            <div class="card">
-                <img src="./assets/imgs/tela.png" alt="Flores">
-                <div class="card-content">
-                    <h1>THRICE UPON A TIME</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    
-                    <p class="preco">Valor: 400$</p>
-                </div>
+    <main>
+        <h1 class="p_titulo">Tabela de Preços para Instalação de Redes de Proteção</h1>
+
+        <section aria-labelledby="pacotes-title">
+            <h2 id="pacotes-title" class="section-title">Nossos Pacotes de Instalação</h2>
+
+            <div class="table-responsive">
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Pacote</th>
+                            <th>Tempo de Instalação</th>
+                            <th>Cobertura</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pacote Básico</td>
+                            <td>Até 30 minutos</td>
+                            <td>1 a 3 janelas pequenas (até 5m² cada)</td>
+                            <td class="price-highlight">R$ 250,00</td>
+                        </tr>
+                        <tr>
+                            <td>Pacote Intermediário</td>
+                            <td>Até 1 hora</td>
+                            <td>3 janelas + sacada padrão</td>
+                            <td class="price-highlight">R$ 490,00</td>
+                        </tr>
+                        <tr>
+                            <td>Pacote Completo</td>
+                            <td>1-2 horas</td>
+                            <td>Sacada mediana + até 4 janelas</td>
+                            <td class="price-highlight">R$ 980,00</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <div class="card">
-                <img src="./assets/imgs/tela.png" alt="Flores">
-                <div class="card-content">
-                    <h1>THRICE UPON A TIME</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    
-                    <p class="preco">Valor: 400$</p>
-                </div>
-            </div>
-    
-            <div class="card">
-                <img src="./assets/imgs/tela.png" alt="Flores">
-                <div class="card-content">
-                    <h1>THRICE UPON A TIME</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    
-                    <p class="preco">Valor: 400$</p>
-                </div>
+            <div class="disclaimer">
+                <p><strong>Observação:</strong> Estes valores são referência para instalações padrão. Para um orçamento preciso e personalizado de acordo com suas necessidades específicas, entre em contato com nossa equipe.</p>
             </div>
 
-            <div class="card">
-                <img src="./assets/imgs/tela.png" alt="Flores">
-                <div class="card-content">
-                    <h1>THRICE UPON A TIME</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    
-                    <p class="preco">Valor: 400$</p>
-                </div>
+            <div class="text-center">
+                <a href="https://wa.me/5511934112405" class="cta-button" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-whatsapp"></i> Solicitar Orçamento Personalizado
+                </a>
             </div>
-        
-        </div>
-        </main>
+        </section>
 
-        <footer class="footer">
-            <div class="container content">
-                <div class="footer-header">
-                    <img src="./assets/imgs/leal-logo-white.png" class="img_footer">
-                    <div class="pagamento">
-                        <p class="link">Formas de pagamento</p>
-                        <div class="img_pag">
-                            <img src="./assets/imgs/icons8-foto-48.png" alt="">
-                            <img src="./assets/imgs/icons8-mastercard-48.png" alt="">
-                            <img src="./assets/imgs/icons8-visa-48.png" alt="">
-                        </div>
+        <section aria-labelledby="diferenciais-title">
+            <h2 id="diferenciais-title" class="section-title">Por que escolher a Leal Redes de Proteção?</h2>
+
+            <div class="cards-container">
+                <div class="card" data-aos="fade-up">
+                    <img src="./assets/imgs/trabalho/sacada5.jpg" alt="Instalação rápida e segura">
+                    <div class="card-content">
+                        <h3>Instalação Rápida</h3>
+                        <p>Nossos profissionais são treinados para realizar instalações ágeis sem comprometer a qualidade e segurança.</p>
                     </div>
                 </div>
-                <p class="link">FALE CONOSCO!</p>
-                <ul>
-                    <li>
-                        <p>Atendimento Segunda à Sabado</p>
-                    </li>
-                    <li>
-                        <p>das 8h as 17h</p>
-                    </li>
-                    <li><img src="./assets/imgs/icons8-whatsapp-24.png" class="icons_footer">
-                        <p class="text_footer">(11)1111-2222</p>
-                    </li>
-                    <li><img src="./assets/imgs/icons8-gmail-novo-24.png" class="icons_footer">
-                        <p class="text_footer">instaladorderede@gmail.com</p>
-                    </li>
-                </ul>
-    
-    
-    
-    
-    
+
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./assets/imgs/trabalho/sacada9.jpg" alt="Materiais de alta qualidade">
+                    <div class="card-content">
+                        <h3>Materiais de Qualidade</h3>
+                        <p>Utilizamos apenas materiais certificados e de alta resistência para garantir a máxima proteção.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./assets/imgs/trabalho/parquinho.jpg" alt="Atendimento personalizado">
+                    <div class="card-content">
+                        <h3>Atendimento Personalizado</h3>
+                        <p>Cada projeto é avaliado individualmente para oferecer a melhor solução para suas necessidades.</p>
+                    </div>
+                </div>
             </div>
-    
-    
-    
-        </footer>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-header">
+                <img src="./assets/imgs/leal-logo-white.png" alt="Leal Redes de Proteção">
+                <div>
+                    <p>Formas de pagamento:</p>
+                    <img src="./assets/imgs/pix-icon.png" alt="Pix" width="40">
+                    <img src="./assets/imgs/mastercard-icon.png" alt="Mastercard" width="40">
+                    <img src="./assets/imgs/visa-icon.png" alt="Visa" width="40">
+                </div>
+            </div>
+            <ul class="footer-contacts">
+                <li>Atendimento: Segunda à Sábado, das 8h às 17h</li>
+                <li>WhatsApp: <a href="https://wa.me/5511934112405">(11) 93411-2405</a></li>
+                <li>Email: <a href="mailto:instaladorderede@gmail.com">instaladorderede@gmail.com</a></li>
+            </ul>
+            <p class="copyright">&copy; 2023 Leal Redes de Proteção. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+
+</html>
