@@ -404,7 +404,21 @@
             const offset = -currentIndex * 100;
         carouselItems.style.transform = `translateX(${offset}%)`;
     }
+     
+    // Automatic slide transition
+    function autoSlide() {
+        currentIndex++;
+        if (currentIndex >= carouselItems.children.length) {
+            currentIndex = 0; // Volta ao início se estiver no último slide
+        }
+        updateCarousel();
+    }
+
+    // Set interval for automatic sliding (e.g., every 3 seconds)
+    setInterval(autoSlide, 3000);
 </script>
+    
+
     <script>
         AOS.init();
 
